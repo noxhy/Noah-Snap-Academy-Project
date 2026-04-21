@@ -1,4 +1,4 @@
-const ITEMS_PER_PAGE = 50;
+const ITEMS_PER_PAGE = 25;
 const FILTERS_LISTS = {
   "SMG": ["MP9", "MAC-10", "P90", "UMP-45", "PP-Bizon", "MP7"],
   "Rifle": ["AK-47", "M4A4", "M4A1-S", "SSG 08", "AWP", "FAMAS", "G3SG1", "SCAR-20"],
@@ -152,4 +152,26 @@ function toggleSort() {
     : "↓";
   sortCards();
   showCards();
+}
+
+function nextPage() {
+  if ((current_page + 1) * ITEMS_PER_PAGE < filteredDataset.length) {
+    current_page++;
+    showCards();
+    document.getElementById("card-container").scrollIntoView({ behavior: "smooth" });
+  }
+  else {
+    alert("You are on the final page.");
+  }
+}
+
+function lastPage() {
+  if (current_page > 0) {
+    current_page--;
+    showCards();
+    document.getElementById("card-container").scrollIntoView({ behavior: "smooth" });
+  }
+  else {
+    alert("You are on the first page.");
+  }
 }
