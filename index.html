@@ -1,31 +1,85 @@
 <!doctype html>
 <html>
   <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
+    <title>CS2 Market Viewer</title>
+    <meta name="description" content="A simple market viewer for CS2 skins" />
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript" src="src/scripts.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
   </head>
 
-  <body>
+  <body class="skins-body">
     <header class="main-header">
-      <h1 class="title">LA TV Shows</h1>
+      <h1 class="title">CS2 SKINS MARKET</h1>
     </header>
-    <div id="card-container"></div>
-    <div class="card" style="display: none">
-      <div class="card-content">
-        <h2>TV Show Title</h2>
-        <img src="" alt="TV Show Poster" />
-        <ul>
-          <li>Bullet Point 1</li>
-          <li>Bullet Point 2</li>
-          <li>Bullet Point 3</li>
-        </ul>
+
+    <header class="filter-container">
+
+      <div class="filter-content">
+        <label for="search-input">Search:</label>
+        <input type="text" id="search-input" placeholder="Search skins..."/>
+
+        <label for="price-threshold">Minimum Price:</label>
+        <input type="number" id="price-threshold" value="0" min="0" step="0.01" title="$"/>
+
+        <label for="type-filter">Type:</label>
+        <select id="type-filter">
+          <option value="">All</option>
+          <option value="Pistol">Pistol</option>
+          <option value="Rifle">Rifle</option>
+          <option value="SMG">SMG</option>
+          <option value="Shotgun">Shotgun</option>
+          <option value="LMG">LMG</option>
+          <option value="Zeus">Zeus</option>
+          <option value="Knife">Knife</option>
+          <option value="Gloves">Gloves</option>
+          <option value="Sticker">Sticker</option>
+          <option value="Charm">Charm</option>
+        </select>
+
+        <label for="exterior-filter">Exterior:</label>
+        <select id="exterior-filter">
+          <option value="">All</option>
+          <option value="Factory New">Factory New</option>
+          <option value="Minimal Wear">Minimal Wear</option>
+          <option value="Field-Tested">Field-Tested</option>
+          <option value="Well-Worn">Well-Worn</option>
+          <option value="Battle-Scarred">Battle-Scarred</option>
+        </select>
+
+        <label for="stattrak-filter">StatTrak:</label>
+        <select id="stattrak-filter">
+          <option value="">All</option>
+          <option value="StatTrak™">StatTrak™</option>
+          <option value="Non-StatTrak™">Non-StatTrak™</option>
+        </select>
+
+        <button onclick="applyFilters()">Apply Filters</button>
+      </div>
+
+      <div class="sort-content">
+        <button onclick="toggleSort()">Sort by Price: <span id="sort-order">↓</span></button>
+      </div>
+    </header>
+
+    <div class="scroll-container">
+      <div class="scroll-content">
+        <div id="card-container"></div>
+        <div class="card" style="display: none">
+          <div class="card-content">
+            <h2></h2>
+            <img src="" />
+            <h3></h3>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="footer">
-      <button onclick="quoteAlert()">Get A Quote!</button>
-      <button onclick="removeLastCard()">Remove A Card!</button>
-    </div>
   </body>
+
+  <footer class="main-footer">
+    <button onclick="lastPage()">Last Page</button>
+    <button onclick="nextPage()">Next Page</button>
+  </footer>
 </html>

@@ -1,7 +1,30 @@
+@import url('https://googleapis.com');
+
 html,
 body {
   margin: 0;
   padding: 0;
+  background-color: rgb(28, 17, 34);
+  height: 100%;
+}
+
+.skins-body {
+  min-height: 10px;
+}
+
+.montserrat-Default {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+.inter-Default {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
 }
 
 .main-header {
@@ -12,16 +35,19 @@ body {
 .title {
   text-align: center;
   margin: 0;
-  font-size: 8em;
-  font-family: "Helvetica";
+  font-size: 6em;
+  font-family: "Inter", sans-serif;
   font-weight: normal;
   color: white;
+  font-weight: 700;
 }
 
 #card-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 20px;
+  color: white;
 }
 
 .card {
@@ -30,17 +56,28 @@ body {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 5px;
+  background-color: rgba(59, 43, 71, 0.521);
 }
 
 .card-content {
   padding: 20px;
-  font-family: "Verdana";
-  color: #777;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
 }
 
 .card-content h2 {
-  margin-top: 0;
+  margin-top: 0px;
   font-size: 20px;
+  padding-bottom: 5px;
+  border-bottom: #666 solid 2px;
+}
+
+.card-content h3 {
+  font-size: 32px;
+  padding-top: 5px;
+  border-top: #666 solid 2px;
+  margin-bottom: 0px;
+  height: 100%;
 }
 
 .card img {
@@ -48,23 +85,76 @@ body {
   height: auto;
 }
 
-.footer {
+footer {
   display: flex;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.3);
   padding: 10px;
+  align-items: center;
+  width: 100%;
 }
 
 button {
   text-align: center;
-  background-color: #666;
-  border: none;
+  background-color: rgba(59, 43, 71, 0.521);
+  border: 1px solid #ccc;
   padding-left: 10px;
   padding-right: 10px;
   height: 40px;
   border-radius: 10px;
   color: white;
-  font-size: 22px;
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
   cursor: pointer;
   margin: 5px;
+}
+
+.scroll-container {
+  height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.scroll-content {
+  padding: 20px;
+}
+
+.scroll-box {
+  width: 300px;
+  height: 200px;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+  overflow: scroll;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  width: 100%;
+}
+
+label {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+select {
+  padding: 5px;
+  margin-right: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: 'Inter', sans-serif;
+}
+
+input {
+  padding: 5px;
+  margin-right: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: 'Inter', sans-serif;
 }
